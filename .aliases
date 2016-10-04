@@ -110,4 +110,7 @@ alias openvpn='openconnect https://homebase-rtp.netapp.com/MFA -b --pid-file=/va
 alias killvpn='kill -2'
 alias 3monitor='xrandr --output VIRTUAL1 --off --output eDP1 --off --output DP1 --off --output DP2-1 --mode 1920x1080 --pos 0x0 --rotate normal --crtc 0 --output DP2-2 --mode 1920x1080 --pos 1920x0 --crtc 1 --rotate normal --output DP2-3 --mode 1920x1080 --pos 3840x0 --crtc 2 --rotate normal --output HDMI2 --off --output HDMI1 --off --output DP2 --off'
 alias 1monitor='xrandr --output eDP1 --mode 1600x900 --pos 0x0 --rotate normal --crtc 0 -d :0 --output DP1 --off --output DP2 --off --output DP2-1 --off --output DP2-2 --off --output DP2-3 --off  --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off'
+<<<<<<< HEAD
 alias dockerupdate='docker images | cut -f1 -d " " | grep -v REPO | xargs -n1 docker pull && docker images | grep none | awk '{print $3}' | xargs -n1 docker rmi'
+=======
+>>>>>>> f1f2c55434e4efb4994b3d415cb39737cb6a1b94
