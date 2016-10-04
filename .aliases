@@ -102,15 +102,27 @@ alias pubkey="more ~/.ssh/id_ed25519.pub | xclip -selection clipboard | echo '=>
 # Pipe my private key to my clipboard.
 alias prikey="more ~/.ssh/id_ed25519 | xclip -selection clipboard | echo '=> Private key copied to pasteboard.'"
 
-# More stuff from me
+## More stuff from me
+# Alerts when command completes
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# When WPA_Supplicant isn't auto started, you can start it with below command
 alias wpawifi='sudo /etc/init.d/wpa_supplicant start'
-alias dockerupdate='docker images | cut -f1 -d " " | grep -v REPO | xargs -n1 docker pull'
+
+# VPN for work
 alias openvpn='openconnect https://homebase-rtp.netapp.com/MFA -b --pid-file=/var/run/openconnect.pid'
+
+# Sends SIGINT to OpenConnect to disconnect interface running in background
 alias killvpn='kill -2'
+
+# External monitor command
 alias 3monitor='xrandr --output VIRTUAL1 --off --output eDP1 --off --output DP1 --off --output DP2-1 --mode 1920x1080 --pos 0x0 --rotate normal --crtc 0 --output DP2-2 --mode 1920x1080 --pos 1920x0 --crtc 1 --rotate normal --output DP2-3 --mode 1920x1080 --pos 3840x0 --crtc 2 --rotate normal --output HDMI2 --off --output HDMI1 --off --output DP2 --off'
+
+# Laptop integrated monitor display
 alias 1monitor='xrandr --output eDP1 --mode 1600x900 --pos 0x0 --rotate normal --crtc 0 -d :0 --output DP1 --off --output DP2 --off --output DP2-1 --off --output DP2-2 --off --output DP2-3 --off  --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off'
-<<<<<<< HEAD
-alias dockerupdate='docker images | cut -f1 -d " " | grep -v REPO | xargs -n1 docker pull && docker images | grep none | awk '{print $3}' | xargs -n1 docker rmi'
-=======
->>>>>>> f1f2c55434e4efb4994b3d415cb39737cb6a1b94
+
+# Update existing Docker images and removes stale images left behind
+alias dockerupdate="docker images | cut -f1 -d ' ' | grep -v REPO | xargs -n1 docker pull && docker images | grep none | awk '{print $3}' | xargs -n1 docker rmi"
+
+# Copies git key to clipboard
+alias gitprikey="more ~/.ssh/git.priv | xclip -selection clipboard | echo '=> Github private key copied to pasteboard.'"
