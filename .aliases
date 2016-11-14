@@ -118,6 +118,9 @@ alias killvpn='kill -2'
 # External monitor command
 alias 3monitor='xrandr --output VIRTUAL1 --off --output eDP1 --off --output DP1 --off --output DP2-1 --mode 1920x1080 --pos 0x0 --rotate normal --crtc 0 --output DP2-2 --mode 1920x1080 --pos 1920x0 --crtc 1 --rotate normal --output DP2-3 --mode 1920x1080 --pos 3840x0 --crtc 2 --rotate normal --output HDMI2 --off --output HDMI1 --off --output DP2 --off'
 
+# Laptop with 2 external monitors
+alias 2monitor='xrandr --output eDP1 --mode 1600x900 --pos 0x0 --rotate normal --crtc 0 -d :0 --output DP1 --off --output DP2 --off --output DP2-1 --mode 1920x1080 --pos 1920x0 --rotate normal --crtc 1 --output DP2-2 --mode 1920x1080 --pos 3840x0 --crtc 2 --rotate normal --output DP2-3 --off  --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off'
+
 # Laptop integrated monitor display
 alias 1monitor='xrandr --output eDP1 --mode 1600x900 --pos 0x0 --rotate normal --crtc 0 -d :0 --output DP1 --off --output DP2 --off --output DP2-1 --off --output DP2-2 --off --output DP2-3 --off  --output HDMI1 --off --output HDMI2 --off --output VIRTUAL1 --off'
 
